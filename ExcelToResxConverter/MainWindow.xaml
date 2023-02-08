@@ -1,0 +1,55 @@
+﻿<Window x:Class="ExcelToResxConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Title="Excel to Resx Converter" Height="230" Width="800">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="TextBlock" x:Key="Header">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+            <Style TargetType="TextBox" x:Key="EnterPath">
+                <Setter Property="Margin" Value="10, 5, 10, 5"/>
+                <Setter Property="Height" Value="30"/>
+            </Style>
+            <Style TargetType="Button" x:Key="SelectFile">
+                <Setter Property="Margin" Value="0, 5, 0, 5"/>
+            </Style>
+            <Style TargetType="Button" x:Key="Convert">
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+        </Grid.Resources>
+
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource Header}" Text="Excel File"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource EnterPath}" Text="{Binding ExcelFilePath}"/>
+        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource SelectFile}"
+                Content=". . ." Command="{Binding SelectExcelFileCommand}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource Header}" Text="Resx File"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource EnterPath}" Text="{Binding ResxDirectoryPath}"/>
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource SelectFile}"
+                Content=". . ." Command="{Binding SelectResxFileCommand}"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" 
+                    Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 10, 0, 10">
+            <Button Style="{StaticResource Convert}" Content="Convert" Command="{Binding ConvertCommand}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
