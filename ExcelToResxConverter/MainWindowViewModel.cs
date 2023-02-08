@@ -11,8 +11,8 @@ namespace ExcelToResxConverter
     public class MainWindowViewModel : ReactiveObject
     {
         #region Const Field
-        public const string KOREAN_FILE_NAME = "Resource.ko-KR.resx";
-        public const string ENGLISH_FILE_NAME = "Resource.en-US.resx";
+        public const string KOREAN_FILE_NAME = "Resources.ko-KR.resx";
+        public const string ENGLISH_FILE_NAME = "Resources.en-US.resx";
         public const string TEMPLATE_FILE_NAME = "template.xml";
         #endregion
 
