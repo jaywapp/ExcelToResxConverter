@@ -37,7 +37,7 @@ namespace ExcelToResxConverter.Model
         private static XElement ToValueElement(string value)
         {
             var element = new XElement("value");
-            element.Value = value;
+            element.Value = value ?? string.Empty;
 
             return element;
         }
